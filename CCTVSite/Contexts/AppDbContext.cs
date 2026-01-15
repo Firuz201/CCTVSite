@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Reflection;
+using CCTVSite.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CCTVSite.Contexts
 {
@@ -8,6 +10,14 @@ namespace CCTVSite.Contexts
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            base.OnModelCreating(modelBuilder);
+        }
+
+        public DbSet <Employee> Employee { get; set; }
+        public DbSet <Position> Positionsd { get; set; }
         
     }
 }
