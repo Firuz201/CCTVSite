@@ -16,8 +16,8 @@ namespace CCTVSite.Contexts
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet <Employee> Employee { get; set; }
-        public DbSet <Position> Positionsd { get; set; }
+        public DbSet <Employee> Employees { get; set; }
+        public DbSet <Position> Positions { get; set; }
         
     }
 }

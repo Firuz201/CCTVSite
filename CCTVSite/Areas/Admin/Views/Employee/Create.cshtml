@@ -1,0 +1,33 @@
+﻿@model EmployeeCreateVM
+<div class="container">
+	<div class="row">
+        <form method="post">
+
+            <div class="form-group">
+                <label asp-for="FullName"></label>
+                <input class="form-control" asp-for="FullName" placeholder="Enter full name">
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="Image"></label>
+                <input class="form-control" asp-for="Image" placeholder="Enter image">
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+
+            <div>
+                <select asp-for="PositionId" class="form-control" asp-items="@ViewBag.Positions">
+                </select>
+                <span asp-validation-for="PositionId" class="text-danger"></span>
+            </div>
+            
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+	</div>
+</div>
+
+@section Scripts
+{
+	<partial name="_ValidationScriptsPartial"></partial>
+}
